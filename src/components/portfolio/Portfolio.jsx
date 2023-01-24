@@ -67,6 +67,16 @@ const Portfolio = () => {
         </article>
         <article className='portfolio_item' >
           <div className='portfolio_item-image' >
+            <img src={inventory_management} alt="inventory_management" />
+          </div>
+          <h3>Inventory Management</h3>
+          <div className='portfolio_item-cta' >
+            <a href="https://github.com/bhupi-010/sellbuy" className='btn'>Github</a>
+            <button className='btn btn-primary' >Live not available</button>
+          </div>
+        </article>
+        <article className='portfolio_item' >
+          <div className='portfolio_item-image' >
             <img src={todo} alt="todo img" />
           </div>
           <h3>Todo App</h3>
@@ -75,16 +85,7 @@ const Portfolio = () => {
              <a href="https://todo0-appp.netlify.app/" className='btn btn-primary'>Live</a>
           </div>
         </article>
-        <article className='portfolio_item' >
-          <div className='portfolio_item-image' >
-            <img src={inventory_management} alt="inventory_management" />
-          </div>
-          <h3>Inventory Management</h3>
-          <div className='portfolio_item-cta' >
-            <a href="https://github.com/bhupi-010/sellbuy" className='btn'>Github</a>
-            <a href=" " className='btn btn-primary'>Live</a>
-          </div>
-        </article>
+       
         
       </div>
     </section>
