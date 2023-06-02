@@ -35,8 +35,8 @@ const About = () => {
     <section id="about">
     <h5>Get TO Know</h5>
     <motion.h2
-      initial={{ y: -300 }}
-      animate={{ y: animateTitle ? 0 : -300 }} // Only animate when in view
+      initial={{ y: -30 }}
+      animate={{ y: animateTitle ? 0 : -30 }} // Only animate when in view
       transition={{ delay: 0.1 }}
     >
       About Me

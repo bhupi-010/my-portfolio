@@ -32,14 +32,14 @@ const Portfolio = () => {
     <section id='portfolio'>
       <h5>My Recent Works</h5>
       <motion.h2
-       initial={{ y: -150 }}
-       animate={{ y: animateTitle ? 0 : -150 }} // Only animate when in view
+       initial={{ y: -30 }}
+       animate={{ y: animateTitle ? 0 : -30 }} // Only animate when in view
        transition={{ delay: 0.1 }}
       >Portfolio</motion.h2>
 
       <motion.div 
-       initial={{ x: -400 }}
-       animate={{ x: animateTitle ? 0 : -500 }} // Only animate when in view
+       initial={{ x: -300 }}
+       animate={{ x: animateTitle ? 0 : -300 }} // Only animate when in view
        transition={{ delay: 0.3 }}
       className='container portfolio_container' >
         <article className='portfolio_item' >

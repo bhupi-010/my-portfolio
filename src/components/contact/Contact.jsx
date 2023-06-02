@@ -52,8 +52,8 @@ const Contact = () => {
     <section id="contact">
       <h5>Get In Touch</h5>
       <motion.h2
-      initial={{ y: -150 }}
-      animate={{ y: animateTitle ? 0 : -150 }} // Only animate when in view
+      initial={{ y: -30}}
+      animate={{ y: animateTitle ? 0 : -30 }} // Only animate when in view
       transition={{ delay: 0.1 }}
       >Contact Me</motion.h2>
       <motion.div
