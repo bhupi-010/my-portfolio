@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './portfolio.css'
 import ecommerce from "../../assets/ecommerce.jpg"
 import todo from "../../assets/todo.jpg"
@@ -7,14 +7,41 @@ import quotes from "../../assets/quotes.jpg"
 import restaurent from "../../assets/restaurent.jpg"
 import redux from "../../assets/redux-toolkit.jpg"
 import local from "../../assets/local.jpg"
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
+  const [animateTitle, setAnimateTitle] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("portfolio");
+      console.log(element);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight;
+        setAnimateTitle(isInView);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <section id='portfolio'>
       <h5>My Recent Works</h5>
-      <h2>Portfolio</h2>
+      <motion.h2
+       initial={{ y: -150 }}
+       animate={{ y: animateTitle ? 0 : -150 }} // Only animate when in view
+       transition={{ delay: 0.1 }}
+      >Portfolio</motion.h2>
 
-      <div className='container portfolio_container' >
+      <motion.div 
+       initial={{ x: -400 }}
+       animate={{ x: animateTitle ? 0 : -500 }} // Only animate when in view
+       transition={{ delay: 0.3 }}
+      className='container portfolio_container' >
         <article className='portfolio_item' >
           <div className='portfolio_item-image' >
             <img src={ecommerce} alt="ecommerce img" />
@@ -87,7 +114,7 @@ const Portfolio = () => {
         </article>
        
         
-      </div>
+      </motion.div>
     </section>
   )
 }

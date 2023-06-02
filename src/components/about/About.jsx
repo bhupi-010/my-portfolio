@@ -1,21 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./about.css";
 import { FaAward, FaFolderOpen } from "react-icons/fa";
 import Me from "../../assets/my.jpg";
-
+import { motion } from "framer-motion";
 const About = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [animateTitle, setAnimateTitle] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("about");
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight;
+        setAnimateTitle(isInView);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = Me;
+    image.onload = () => {
+      setImageLoaded(true);
+    };
+  }, []);
+
   return (
     <section id="about">
-      <h5>Get TO Know</h5>
-      <h2>About Me</h2>
+    <h5>Get TO Know</h5>
+    <motion.h2
+      initial={{ y: -300 }}
+      animate={{ y: animateTitle ? 0 : -300 }} // Only animate when in view
+      transition={{ delay: 0.1 }}
+    >
+      About Me
+    </motion.h2>
       <div className="container about_container">
         <div className="about_me">
           <div className="about_me-image">
-            <img src={Me} alt="me_image" />
+            {imageLoaded ? (
+              <img src={Me} alt="me_image" />
+            ) : (
+              <p>Loading image...</p>
+            )}
           </div>
         </div>
 
-        <div className="about_content">
+        <motion.div 
+        initial={{ x: -300 }}
+        animate={{ x: animateTitle ? 0 : -300 }} // Only animate when in view
+        transition={{ delay: 0.3 }}
+        className="about_content">
           <div className="about_cards">
             <article className="about_card">
               <FaAward className="about_icon" />
@@ -47,7 +88,7 @@ const About = () => {
               Let's Talk
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

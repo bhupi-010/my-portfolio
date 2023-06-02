@@ -1,12 +1,31 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useRef } from "react";
+import React, { useRef,useState,useEffect } from "react";
 import "./contact.css";
 import { FiMail } from "react-icons/fi";
 import { RiMessengerFill } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
-
+import { motion } from "framer-motion";
 const Contact = () => {
+
+  const [animateTitle, setAnimateTitle] = useState(false);
+
+   useEffect(() => {
+     const handleScroll = () => {
+       const element = document.getElementById("contact");
+       console.log(element);
+       if (element) {
+         const rect = element.getBoundingClientRect();
+         const isInView = rect.top < window.innerHeight;
+         setAnimateTitle(isInView);
+       }
+     };
+ 
+     window.addEventListener("scroll", handleScroll);
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -32,8 +51,16 @@ const Contact = () => {
   return (
     <section id="contact">
       <h5>Get In Touch</h5>
-      <h2>Contact Me</h2>
-      <div className="container contact_container">
+      <motion.h2
+      initial={{ y: -150 }}
+      animate={{ y: animateTitle ? 0 : -150 }} // Only animate when in view
+      transition={{ delay: 0.1 }}
+      >Contact Me</motion.h2>
+      <motion.div
+      initial={{ x: -400 }}
+      animate={{ x: animateTitle ? 0 : -500 }} // Only animate when in view
+      transition={{ delay: 0.3 }}
+      className="container contact_container">
         <div className="contact_options">
           <article className="contact_option">
             <FiMail className="contact_option-icon" />
@@ -77,7 +104,7 @@ const Contact = () => {
             Send Message
           </button>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };
