@@ -69,7 +69,22 @@ const Experience = () => {
           </article>
           <article className='experience_content' >
              <BsPatchCheckFill className='experience_content-icon'/>
-             <div><h4>REACT</h4>
+             <div><h4>REACT JS</h4>
+             <small className='text-light' > Experienced</small></div>
+          </article>
+          <article className='experience_content' >
+             <BsPatchCheckFill className='experience_content-icon'/>
+             <div><h4>NEXT JS</h4>
+             <small className='text-light' > Experienced</small></div>
+          </article>
+          <article className='experience_content' >
+             <BsPatchCheckFill className='experience_content-icon'/>
+             <div><h4>POSTMAN</h4>
+             <small className='text-light' > Experienced</small></div>
+          </article>
+          <article className='experience_content' >
+             <BsPatchCheckFill className='experience_content-icon'/>
+             <div><h4>JEST</h4>
              <small className='text-light' > Experienced</small></div>
           </article>
           <article className='experience_content' >
@@ -92,7 +107,13 @@ const Experience = () => {
              <div><h4>FIREBASE</h4>
              <small className='text-light' > Experienced</small></div>
           </article>
+          <article className='experience_content' >
+             <BsPatchCheckFill className='experience_content-icon'/>
+             <div><h4>JIRA</h4>
+             <small className='text-light' > Experienced</small></div>
+          </article>
           </div>
+          
         
       </motion.div>
     </section>
