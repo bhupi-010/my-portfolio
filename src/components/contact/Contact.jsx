@@ -66,7 +66,7 @@ const Contact = () => {
             <FiMail className="contact_option-icon" />
             <h4>Email</h4>
             <h5>nathbbhupi10@gmail.com</h5>
-            <a href="mailto:nathbbhupi10@gmail.com" target="_blank">
+            <a href="mailto:nathbhupi10@gmail.com" target="_blank">
               send a message
             </a>
           </article>
