@@ -10,7 +10,6 @@ const Experience = () => {
    useEffect(() => {
      const handleScroll = () => {
        const element = document.getElementById("experience");
-       console.log(element);
        if (element) {
          const rect = element.getBoundingClientRect();
          const isInView = rect.top < window.innerHeight;

@@ -19,7 +19,6 @@ const Portfolio = () => {
   useEffect(() => {
     const handleScroll = () => {
       const element = document.getElementById("portfolio");
-      console.log(element);
       if (element) {
         const rect = element.getBoundingClientRect();
         const isInView = rect.top < window.innerHeight;
