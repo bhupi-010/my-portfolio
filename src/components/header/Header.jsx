@@ -28,7 +28,7 @@ const Header = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.75 }}
         >
-          React Developer
+          React/Next Developer
         </motion.h5>
         <CTA />
 

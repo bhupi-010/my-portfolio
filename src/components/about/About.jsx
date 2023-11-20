@@ -33,14 +33,14 @@ const About = () => {
 
   return (
     <section id="about">
-    <h5>Get TO Know</h5>
-    <motion.h2
-      initial={{ y: -30 }}
-      animate={{ y: animateTitle ? 0 : -30 }} // Only animate when in view
-      transition={{ delay: 0.1 }}
-    >
-      About Me
-    </motion.h2>
+      <h5>Get TO Know</h5>
+      <motion.h2
+        initial={{ y: -30 }}
+        animate={{ y: animateTitle ? 0 : -30 }} // Only animate when in view
+        transition={{ delay: 0.1 }}
+      >
+        About Me
+      </motion.h2>
       <div className="container about_container">
         <div className="about_me">
           <div className="about_me-image">
@@ -52,36 +52,48 @@ const About = () => {
           </div>
         </div>
 
-        <motion.div 
-        initial={{ x: -300 }}
-        animate={{ x: animateTitle ? 0 : -300 }} // Only animate when in view
-        transition={{ delay: 0.3 }}
-        className="about_content">
+        <motion.div
+          initial={{ x: -300 }}
+          animate={{ x: animateTitle ? 0 : -300 }} // Only animate when in view
+          transition={{ delay: 0.3 }}
+          className="about_content"
+        >
           <div className="about_cards">
             <article className="about_card">
               <FaAward className="about_icon" />
               <h5>Experience</h5>
-              <small>1 year experience</small>
+              <small>2 year experience</small>
             </article>
 
             <article className="about_card">
               <FaFolderOpen className="about_icon" />
               <h5>Projects</h5>
-              <small>10+ projects completed</small>
+              <small>5+ projects completed</small>
             </article>
           </div>
 
           <p>
-            I had studied computer science in information technology and have
-            gained a solid understanding of programming concepts and languages
-            such as HTML, CSS, and JavaScript. i had done internship in react js
-            so I am familiar with React, a popular JavaScript library for
-            building user interfaces. I am a quick learner and am able to adapt
-            to new technologies quickly. I am excited to take on new challenges
-            and am eager to apply my skills to real-world projects. I am a team
-            player and am always open to feedback and suggestions to improve my
-            work. I am looking forward to building a career in web development
-            and am confident that I can make valuable contributions to any team.
+            I studied computer science with a focus on information technology
+            and acquired a strong foundation in programming concepts and
+            languages, including HTML, CSS, and JavaScript. During my academic
+            journey, I had the opportunity to explore React, a popular
+            JavaScript library for building user interfaces. I further honed my
+            skills through an internship in React JS. Building on my academic
+            and internship experiences, I transitioned into the professional
+            realm by working as a Junior React Developer at Softosys. During my
+            one-year tenure, I had the chance to immerse myself in real-world
+            projects, enhancing my expertise and gaining valuable practical
+            insights. This experience has significantly contributed to my
+            proficiency in React and web development. I am a quick learner with
+            the ability to adapt swiftly to new technologies. As a team player,
+            I actively seek opportunities to collaborate and thrive on
+            constructive feedback to continuously improve my work. Eager to take
+            on new challenges, I am now looking forward to leveraging my skills
+            and experiences in web development for future career opportunities.
+            I am confident that my blend of academic knowledge and hands-on
+            experience makes me a valuable asset to any development team. I am
+            excited about the prospect of contributing to meaningful projects
+            and continuing to grow in my career.
           </p>
           <div className="button">
             <a href="#contact" className="btn btn-primary">
